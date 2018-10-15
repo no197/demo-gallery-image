@@ -1,0 +1,69 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible', content='ie=edge')
+		title Coder Beautiful Images
+		//- Custom fonts for this template
+		link(href='/vendor/fontawesome-free/css/all.min.css', rel='stylesheet', type='text/css')
+		link(rel='stylesheet', href='/vendor/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/style.css')
+		link(rel='stylesheet', href='/css/jquery.fancybox.min.css')
+		link(rel='stylesheet', href='/css/animate.css')
+		link(rel='dns-prefetch', href='http://68.media.tumblr.com/')
+
+	body
+		.container.header.mt-5.mb-5
+			//- Branch
+			img.m-auto.rounded-circle.image-branch(src='/imgs/coder.jpg', alt='Coder ky su', width='128')
+			// Title site
+			.text-center.mt-3
+				h1
+					a.site-title(href='/') Coder Beautiful Images
+				p.description Beautiful images to reduce stress
+			//- Social component
+			aside.widget.about-widget.mt-3
+				//- social list
+				ul.socials.text-center
+					li
+						a(href='http://facebook.com')
+							i.fab.fa-facebook-f.text-xs-center
+					li
+						a(href='http://twitter.com')
+							i.fab.fa-twitter
+					li
+						a(href='http://github.com')
+							i.fab.fa-github
+					li
+						a(href='www.linkedin.com')
+							i.fab.fa-linkedin-in
+		.container.mb-5
+			.grid
+				.grid-sizer
+				each item in items
+					.grid-item
+						a(data-fancybox='gallery', href= item.url)
+							img.img-fluid.wow.fadeInUp(src= item.url, alt='')
+			
+			.row.d-flex.d-flex.justify-content-between.m-5
+				if page != 1
+					a.btn.btn-dark.mybtn(href= "/?page=" + previousPage) Previous page
+				else
+					a.btn.btn-dark.disabled.mybtn(href= "/?page=" + previousPage) Previous page
+
+				if page >= totalPage
+					a.btn.btn-dark.disabled.mybtn(href= "/?page=" + nextPage) Next page
+				else
+					a.btn.btn-dark.mybtn(href= "/?page=" + nextPage) Next page
+
+		
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+		script(src='http://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js')
+		script(src='http://npmcdn.com/imagesloaded@4/imagesloaded.pkgd.js')
+		script(src='/js/jquery.fancybox.min.js')
+		script(src='/vendor/bootstrap/js/bootstrap.min.js')
+		script(src='/js/isotope.pkgd.min.js')
+		script(src='/js/index.js')
+
+			
