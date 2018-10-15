@@ -11,6 +11,7 @@ app.set('views', './template') // specify the views directory
 app.set('view engine', 'pug') // register the template engine
 
 app.use(express.static('public'))
+var port = process.env.PORT|| 3000;
 
 //create a connection to database
 var con = mysql.createConnection({
@@ -61,6 +62,6 @@ app.get('/', function (req, res) {
 
 })
 
-app.listen(3000, function () {
+app.listen(port, function () {
     console.log("listening on port 3000");
 })
