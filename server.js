@@ -37,7 +37,6 @@ app.get('/', function (req, res) {
     //query databases
     var sql = "SELECT * FROM girl";
     con.query(sql, function (err, results) {
-        console.log(results);
         if (err)
             console.log(err);
         var totalPage = Math.ceil(results.length / 10);
