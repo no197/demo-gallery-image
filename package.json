@@ -1,20 +1,21 @@
 {
-  "name": "demo-nodejs-mysql",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --inspect server.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4",
-    "mysql": "^2.16.0",
-    "pug": "^2.0.3"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
-  }
+    "name": "demo-nodejs-mysql",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon --inspect server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.16.4",
+        "mysql": "^2.16.0",
+        "pug": "^2.0.3"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.4"
+    }
 }
