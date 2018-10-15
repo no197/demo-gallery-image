@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 //require express
 var express = require('express');
 var app = express();
@@ -12,15 +14,16 @@ app.use(express.static('public'))
 
 //create a connection to database
 var con = mysql.createConnection({
-    host: "localhost",
-    user: "user_girl",
-    password: "123456",
-    database: "girl-data"
+    host: process.env.SERVER,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.NAME
 });
 
 //open connect and check the conect is success
 con.connect(function (err) {
-    if (err) throw err;
+    if (err) 
+        console.log(err);
     console.log("Connected!!!");
 });
 
@@ -33,7 +36,9 @@ app.get('/', function (req, res) {
     //query databases
     var sql = "SELECT * FROM girl";
     con.query(sql, function (err, results) {
-        if (err) throw err;
+        console.log(results);
+        if (err)
+            console.log(err);
         var totalPage = Math.ceil(results.length / 10);
         // check page is greater than totalPage
         if (page > totalPage) {
