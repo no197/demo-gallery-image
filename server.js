@@ -1,3 +1,4 @@
+//require environment varibles
 require('dotenv').config()
 
 //require express
