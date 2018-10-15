@@ -9,7 +9,7 @@ var $grid = $('.grid').isotope({
     }
   });
   // layout Isotope after each image loads
-//   $grid.imagesLoaded().progress( function() {
-//     $grid.isotope('layout');
-//   });  
+  $grid.imagesLoaded().progress( function() {
+    $grid.isotope('layout');
+  });  
   
